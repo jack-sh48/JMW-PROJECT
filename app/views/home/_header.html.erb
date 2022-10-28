@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Including the bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src=
+      "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src=
+      "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src=
+      "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+      href=
+      "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src=
+      "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src=
+      "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+      .bs-example {
+      margin: auto;
+      width: 25%;
+      }
+      @media screen {
+      .dropdown:hover .dropdown-menu,
+      .btn-group:hover .dropdown-menu {
+      display: block;
+      }
+      .dropdown-menu {
+      margin: auto;
+      }
+      .dropdown-toggle {
+      margin: auto;
+      }
+      .navbar .dropdown-toggle,
+      .nav-tabs .dropdown-toggle {
+      margin: auto;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Creating a navigation bar using the
+      .navbar class of bootstrap -->
+    <nav class="navbar navbar-expand-sm bg-light" style="height: 103px; position: fixed;z-index: 1;width: 1300px; top: 0;">
+      <div class="img">
+        <%= image_tag "jmw.png" %>
+      </div>
+      <ul class="navbar-nav ml-auto nav_bar" style="font-size: 16px; font-weight: bold;">
+        <li class="dropdown nav-item home_link">
+          <a href="#"
+            data-toggle="dropdown"
+            >
+          <%= link_to 'Company', root_path, class: "dropdown-toggle", :style => "color: #f47900;" %>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-arrow">
+            <li>
+              <%= link_to 'About us', about_us_path, :style => "color: #f47900;" %>
+            </li>
+            <li>
+              <%= link_to 'Partnership', partnership_path, :style => "color: #f47900;" %>
+            </li>
+            <li>
+              <%= link_to 'Career', career_path, :style => "color: #f47900;"%>
+            </li>
+          </ul>
+        </li>
+        <ul class="navbar-nav ml-auto nav_bar second-drop" style="position: relative;left: 53px;">
+          <li class="dropdown nav-item home_link">
+            <a href="#"
+              data-toggle="dropdown"
+              >
+            <%= link_to 'What We Do', what_we_do_path, :class =>  'dropdown-toggle', :style => "color: #f47900;" %>
+            </a>
+            <ul class="dropdown-menu">
+            <div class="arrow-up"></div>
+              <li>
+                <%= link_to 'Mobile App Development', services_mobile_app_development_path, style: "color: #f47900;" %>
+              </li>
+              <li>
+                <%= link_to 'Web Development', services_web_development_path, style: "color: #f47900;" %>
+              </li>
+              <li>
+                <%= link_to 'Devpos', services_devops_path, style: "color: #f47900;" %>
+              </li>
+              <li>
+                <%= link_to 'QA', services_quality_assurance_consultancy_path, style: "color: #f47900;" %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <li class="nav-item">
+          <%= link_to 'Our Services', our_services_path, :class =>  'our_services' , :style => "color: #f47900;"%>
+          </a>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Contact us',new_user_path, :class =>  'contact_us', :style => "color: #f47900;" %>
+          </a>
+        </li>
+        <li class="nav-item1">
+          <%= link_to 'Blog',blogs_path, :class =>  'blog' , :style => "color: #f47900; position: relative; left: -15px;"%>
+          </a>
+        </li>
+        <%# if current_account.present? %>
+         <%# if current_account.is_admin == "admin" %>
+            <!-- <li class="nav-item1">
+              <%#= link_to 'Blog Create',new_admin_blog_path, :class =>  'blog' , :style => "color: #f47900; position: relative; left: 15px;"%>
+              </a>
+            </li>
+            <li class="nav-item1">
+              <%#= link_to 'Out',destroy_account_session_path, method: :delete , :class =>  'blog' , :style => "color: #f47900; position: relative; left: 15px;"%>
+              </a>
+            </li> -->
+         <%#end%>
+         <%# end %>
+      </ul>
+    </nav>
+    <style>
+      .second-drop{
+      }
+      .nav_bar{
+      position: relative;
+      left: -95px;
+      }
+      .home_link{
+      position: relative;
+      left: -210px;
+      color:#f47900;
+      }
+      .what_we_do{
+      position: relative;
+      left: -150px;
+      color: #f47900;
+      }
+      .our_services{
+      position: relative;
+      left: -100px;
+      color: #f47900;
+      }
+      .contact_us{
+      position: relative;
+      left: -50px;
+      color: #f47900;
+      }
+      .blog{
+      position: relative;
+      left: 50px;
+      color: #f47900;
+      }
+      .img{
+      position: relative;
+      left: 25px;
+      }
+
+    .dropdown-menu-arrow {
+      top: 50px;
+      position: relative;
+    }
+    .dropdown-menu-arrow:before,
+    .dropdown-menu-arrow:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-width: 7px 8px;
+      border-style: solid;
+      border-color: transparent;
+      z-index: 1001;
+    }
+    .dropdown-menu-arrow:after {
+      bottom: 88px;
+      right: 110px;
+      border-bottom-color: #f47900;
+    }
+
+    .arrow-up {
+      position: relative;
+      top: -12px;
+      left: 40px;
+      width: 0;
+      height: 0;
+      color: #f47900;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid #f47900;
+    }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $(".dropdown, .btn-group").hover(function() {
+              var dropdownMenu =
+                  $(this).children(".dropdown-menu");
+              if (dropdownMenu.is(":visible")) {
+                  dropdownMenu.parent().toggleClass("open");
+              }
+          });
+      });
+    </script>
+  </body>
+</html>
